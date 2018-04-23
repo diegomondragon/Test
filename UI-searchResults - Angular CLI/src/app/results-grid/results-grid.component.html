@@ -1,0 +1,31 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Last Sold</th>
+      <th>Shelf Life</th>
+      <th>Department</th>
+      <th>Price</th>
+      <th>Unit</th>
+      <th>xFor</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.Id }}</td>
+      <td>{{ product.Description }}</td>
+      <td>{{ product.LastSold }}</td>
+      <td>{{ product.ShelfLife }}</td>
+      <td>{{ product.Department }}</td>
+      <td>{{ product.Price }}</td>
+      <td>{{ product.Unit }}</td>
+      <td>{{ product.XFor }}</td>    
+      <td>{{ product.Cost }}</td> 
+    </tr>
+    <tr *ngIf="products?.length == 0">
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  </tbody>
+</table>

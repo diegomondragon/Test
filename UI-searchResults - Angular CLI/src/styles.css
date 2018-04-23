@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+div.container {
+  width: 100%;
+  border: 1px solid gray;
+}
+
+header, footer {
+  padding: 1em;
+  color: black;
+  background-color: #D3D3D3	;
+  clear: left;
+  text-align: center;
+}
+
+.dataTables_empty {
+    display: none;
+  }
+
+.dataTables_wrapper
+.dataTables_length{
+  float: right!important;
+  padding-right: 50px;
+}
