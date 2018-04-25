@@ -81,10 +81,12 @@ export class ResultsGridComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}): void {
     console.log("Changes!! " + this.searchQuery);
-    this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.destroy();
-      this.dtTrigger.next();
-    });
+    if(this.datatableElement.dtInstance){
+      this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        dtInstance.destroy();
+        this.dtTrigger.next();
+      });
+    }
   }
   
   ngAfterViewInit(): void {
