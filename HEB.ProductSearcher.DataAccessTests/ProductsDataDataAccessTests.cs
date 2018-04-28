@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HEB.ProductSearch.Model;
-using HEB.ProductSearcher.Common;
 
 namespace HEB.ProductSearcher.DataManager.Tests
 {

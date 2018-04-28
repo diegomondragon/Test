@@ -9,7 +9,7 @@
   <TargetModelProvider>
     <ProjectBasedModelProvider>
       <ProjectGuid>{fe770839-d20b-46db-a685-2971031612b5}</ProjectGuid>
-      <Name>HEB.ProductSearsher.DataBase</Name>
+      <Name>ProductSearsher.DataBase</Name>
     </ProjectBasedModelProvider>
   </TargetModelProvider>
   <SchemaCompareSettingsService>
@@ -298,7 +298,7 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>TargetDatabaseName</Name>
-        <Value>HEB.ProductSearsher.DataBase</Value>
+        <Value>ProductSearsher.DataBase</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>TargetConnectionString</Name>

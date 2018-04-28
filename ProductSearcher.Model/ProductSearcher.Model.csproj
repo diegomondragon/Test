@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HEB.ProductSearcher.Common\HEB.ProductSearcher.Common.csproj" />
+    <ProjectReference Include="..\ProductSearcher.Common\ProductSearcher.Common.csproj" />
   </ItemGroup>
 
 </Project>

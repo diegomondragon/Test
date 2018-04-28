@@ -1,9 +1,9 @@
-﻿using HEB.ProductSearch.Model;
-using HEB.productSearcher.WebAPI.ModelBinders;
-using HEB.ProductSearsher.BussinesManager;
+﻿using ProductSearch.Model;
+using productSearcher.WebAPI.ModelBinders;
+using ProductSearsher.BussinesManager;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HEB.productSearcher.WebAPI.Controllers
+namespace productSearcher.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     public class ProductsController : Controller
@@ -15,7 +15,6 @@ namespace HEB.productSearcher.WebAPI.Controllers
             _productManager = new ProductManager();
 
         }
-
 
         [HttpGet]
         public ProductDataQuery Get([ModelBinder(typeof(ProductDataQueryModelBinder))] ProductDataQuery dataQuery)

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using HEB.ProductSearcher.Common;
 using System.Data.SqlClient;
+using ProductSearcher.Common;
 
-namespace HEB.ProductSearch.Model
+namespace ProductSearch.Model
 {
     public class ProductDataQuery
     {

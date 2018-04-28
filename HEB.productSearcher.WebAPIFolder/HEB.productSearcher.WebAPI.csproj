@@ -267,13 +267,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HEB.ProductSearcher.Common\HEB.ProductSearcher.Common.csproj">
-      <Project>{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}</Project>
-      <Name>HEB.ProductSearcher.Common</Name>
+    <ProjectReference Include="..\ProductSearcher.Common\ProductSearcher.Common.csproj">
+      <Project>{A258BAAF-5E0E-4D5B-A781-B1528DB5E3B6}</Project>
+      <Name>ProductSearcher.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HEB.ProductSearsher.BussinesManager\HEB.ProductSearcher.BussinesManager.csproj">
-      <Project>{65CEEA77-BFF1-4EC4-B011-9055883AB005}</Project>
-      <Name>HEB.ProductSearcher.BussinesManager</Name>
+    <ProjectReference Include="..\ProductSearcher.Model\ProductSearcher.Model.csproj">
+      <Project>{D2694D24-EC53-4EDE-86C5-A99A450648E8}</Project>
+      <Name>ProductSearcher.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

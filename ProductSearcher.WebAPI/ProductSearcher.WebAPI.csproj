@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HEB.ProductSearsher.BussinesManager\HEB.ProductSearcher.BussinesManager.csproj" />
+    <ProjectReference Include="..\ProductSearcher.BussinesManager\ProductSearcher.BussinesManager.csproj" />
+    <ProjectReference Include="..\ProductSearcher.Common\ProductSearcher.Common.csproj" />
+    <ProjectReference Include="..\ProductSearcher.Model\ProductSearcher.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HEB.ProductSearcher.DataManager
+namespace ProductSearcher.DataManager
 {
     public static class SqlConstants
     {

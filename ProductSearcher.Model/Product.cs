@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HEB.ProductSearch.Model
+namespace ProductSearch.Model
 {
     public class Product
     {

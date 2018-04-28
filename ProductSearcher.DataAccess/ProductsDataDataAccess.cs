@@ -1,35 +1,40 @@
-﻿using HEB.ProductSearch.Model;
+﻿using ProductSearch.Model;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
-namespace HEB.ProductSearcher.DataManager
+namespace ProductSearcher.DataManager
 {
     public class ProductsDataDataAccess : IProductsDataDataAccess
     {
         private const string CONNECTION_STRING_NAME = "dbConnectionString";
         private string _connectionString;
+        public static IConfiguration Configuration { get; set; }
         public string connectionString
         {
             get
             {
                 try
                 {
-                    _connectionString = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
+                    IConfigurationBuilder builder = new ConfigurationBuilder()
+                       .SetBasePath(Directory.GetCurrentDirectory())
+                       .AddJsonFile("appsettings.json");
+
+                    Configuration = builder.Build();
+
+                    _connectionString = Configuration["ConnectionStrings:" + CONNECTION_STRING_NAME];
                     return _connectionString;
                 }
                 catch { throw new ArgumentNullException("Connection string Not found!"); };
             }
             private set { }
         }
-
-
         public ProductsDataDataAccess()
         {
         }
-
         public ProductDataQuery GetProducts(ProductDataQuery dataQuery)
         {
             try
@@ -111,12 +116,9 @@ namespace HEB.ProductSearcher.DataManager
 
             return dataQuery;
         }
-
         public ProductDataQuery GetProducts()
         {
             return GetProducts(new ProductDataQuery());
         }
-
-
     }
 }

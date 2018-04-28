@@ -1,6 +1,6 @@
-﻿using HEB.ProductSearch.Model;
+﻿using ProductSearch.Model;
 
-namespace HEB.ProductSearcher.DataManager
+namespace ProductSearcher.DataManager
 {
     public interface IProductsDataDataAccess
     {

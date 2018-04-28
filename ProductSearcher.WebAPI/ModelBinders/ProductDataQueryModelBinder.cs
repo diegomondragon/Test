@@ -1,11 +1,11 @@
-﻿using HEB.ProductSearch.Model;
-using HEB.ProductSearcher.Common;
+﻿using ProductSearch.Model;
+using ProductSearcher.Common;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HEB.productSearcher.WebAPI.ModelBinders
+namespace productSearcher.WebAPI.ModelBinders
 {
     public class ProductDataQueryModelBinder : IModelBinder
     {
