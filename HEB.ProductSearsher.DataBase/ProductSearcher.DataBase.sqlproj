@@ -64,10 +64,6 @@
     <Build Include="Unit.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="HEB.ProductSearsher.DataBase.refactorlog" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AZURE-HEB.ProductSearsher.DataBase.publish.xml" />
     <None Include="SqlSchemaCompare.scmp" />
   </ItemGroup>
 </Project>
