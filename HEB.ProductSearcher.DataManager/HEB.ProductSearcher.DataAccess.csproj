@@ -47,9 +47,9 @@
     <Compile Include="SqlConstants.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HEB.ProductSearch.Model\HEB.ProductSearch.Model.csproj">
-      <Project>{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}</Project>
-      <Name>HEB.ProductSearch.Model</Name>
+    <ProjectReference Include="..\ProductSearcher.Model\ProductSearcher.Model.csproj">
+      <Project>{D2694D24-EC53-4EDE-86C5-A99A450648E8}</Project>
+      <Name>ProductSearcher.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

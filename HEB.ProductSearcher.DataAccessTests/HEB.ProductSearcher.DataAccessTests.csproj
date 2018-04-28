@@ -64,17 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HEB.ProductSearch.Model\HEB.ProductSearch.Model.csproj">
-      <Project>{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}</Project>
-      <Name>HEB.ProductSearch.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HEB.ProductSearcher.Common\HEB.ProductSearcher.Common.csproj">
       <Project>{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}</Project>
       <Name>HEB.ProductSearcher.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HEB.ProductSearcher.DataManager\HEB.ProductSearcher.DataAccess.csproj">
-      <Project>{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}</Project>
-      <Name>HEB.ProductSearcher.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

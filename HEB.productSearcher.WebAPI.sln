@@ -5,19 +5,21 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.productSearcher.WebAPI.Tests", "HEB.productSearcher.WebAPI.Tests\HEB.productSearcher.WebAPI.Tests.csproj", "{F3238191-AEB6-462B-81AF-6FBFD3E92DCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearch.Model", "HEB.ProductSearch.Model\HEB.ProductSearch.Model.csproj", "{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearcher.BussinesManager", "HEB.ProductSearsher.BussinesManager\HEB.ProductSearcher.BussinesManager.csproj", "{65CEEA77-BFF1-4EC4-B011-9055883AB005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearcher.DataAccess", "HEB.ProductSearcher.DataManager\HEB.ProductSearcher.DataAccess.csproj", "{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearsher.BussinesManager", "HEB.ProductSearsher.BussinesManager\HEB.ProductSearsher.BussinesManager.csproj", "{65CEEA77-BFF1-4EC4-B011-9055883AB005}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HEB.ProductSearsher.DataBase", "HEB.ProductSearsher.DataBase\HEB.ProductSearsher.DataBase.sqlproj", "{FE770839-D20B-46DB-A685-2971031612B5}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HEB.ProductSearcher.DataBase", "HEB.ProductSearsher.DataBase\HEB.ProductSearcher.DataBase.sqlproj", "{FE770839-D20B-46DB-A685-2971031612B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.productSearcher.WebAPI", "HEB.productSearcher.WebAPIFolder\HEB.productSearcher.WebAPI.csproj", "{E3B90B13-3E41-43B3-A93B-28EB35E9F1C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearcher.DataAccessTests", "HEB.ProductSearcher.DataAccessTests\HEB.ProductSearcher.DataAccessTests.csproj", "{1B9DDF2C-424E-4463-AD16-03A5F54E141A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HEB.ProductSearcher.Common", "HEB.ProductSearcher.Common\HEB.ProductSearcher.Common.csproj", "{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSearcher.WebAPI", "ProductSearcher.WebAPI\ProductSearcher.WebAPI.csproj", "{FE73BB82-F5FD-462B-AAD7-C9B288300186}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSearcher.Model", "ProductSearcher.Model\ProductSearcher.Model.csproj", "{D2694D24-EC53-4EDE-86C5-A99A450648E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.DataAccess", "ProductSearcher.DataAccess\ProductSearcher.DataAccess.csproj", "{6B417581-C9BF-4B40-91CC-77356C40FE80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +31,6 @@ Global
 		{F3238191-AEB6-462B-81AF-6FBFD3E92DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3238191-AEB6-462B-81AF-6FBFD3E92DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3238191-AEB6-462B-81AF-6FBFD3E92DCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0174A7A8-7B00-42D8-80CE-3BE68F7FB0CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A150F7A-D6C8-4F9F-A78C-630A31EBA796}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65CEEA77-BFF1-4EC4-B011-9055883AB005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65CEEA77-BFF1-4EC4-B011-9055883AB005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65CEEA77-BFF1-4EC4-B011-9055883AB005}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +53,18 @@ Global
 		{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E498BEF9-3D75-4CBF-9C60-F9257D71E2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE73BB82-F5FD-462B-AAD7-C9B288300186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE73BB82-F5FD-462B-AAD7-C9B288300186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE73BB82-F5FD-462B-AAD7-C9B288300186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE73BB82-F5FD-462B-AAD7-C9B288300186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2694D24-EC53-4EDE-86C5-A99A450648E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2694D24-EC53-4EDE-86C5-A99A450648E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2694D24-EC53-4EDE-86C5-A99A450648E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2694D24-EC53-4EDE-86C5-A99A450648E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B417581-C9BF-4B40-91CC-77356C40FE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B417581-C9BF-4B40-91CC-77356C40FE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B417581-C9BF-4B40-91CC-77356C40FE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B417581-C9BF-4B40-91CC-77356C40FE80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
