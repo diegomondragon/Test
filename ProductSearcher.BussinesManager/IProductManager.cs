@@ -1,6 +1,6 @@
-﻿using ProductSearch.Model;
+﻿using ProductSearcher.Model;
 
-namespace ProductSearsher.BussinesManager
+namespace ProductSearcher.BussinesManager
 {
     public interface IProductManager
     {

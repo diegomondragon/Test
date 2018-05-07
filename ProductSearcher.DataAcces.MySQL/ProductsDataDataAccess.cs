@@ -3,10 +3,12 @@ using ProductSearcher.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.IO;
+using ProductSearcher.Common;
+using System.Linq;
 
-namespace ProductSearcher.DataAccess
+namespace ProductSearcher.DataAcces.MySQL
 {
     public class ProductsDataDataAccess : IProductsDataDataAccess
     {
@@ -32,14 +34,12 @@ namespace ProductSearcher.DataAccess
             }
             private set { }
         }
-        public ProductsDataDataAccess()
-        {
-        }
+
         public ProductDataQuery GetProducts(ProductDataQuery dataQuery)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     string filterString = dataQuery.GetFiltersAsString();
                     string queryTotalProducts = SqlConstants.PRODUCTS_SELECT_QUERY_COUNT;
@@ -47,8 +47,8 @@ namespace ProductSearcher.DataAccess
                         queryTotalProducts += SqlConstants.WHERE + filterString;
 
 
-                    SqlCommand cmdTotalProducts = new SqlCommand(queryTotalProducts, conn);
-                    cmdTotalProducts.Parameters.AddRange(dataQuery.GetFilterParameters());
+                    MySqlCommand cmdTotalProducts = new MySqlCommand(queryTotalProducts, conn);
+                    cmdTotalProducts.Parameters.AddRange(GetFilterParameters(dataQuery.Filters));
                     conn.Open();
 
                     Int32 count = Convert.ToInt32(cmdTotalProducts.ExecuteScalar());
@@ -64,20 +64,20 @@ namespace ProductSearcher.DataAccess
 
                     queryProducts += SqlConstants.PRODUCTS_SELECT_QUERY_CLOSE;
 
-                    SqlCommand cmdProducts = new SqlCommand(queryProducts, conn);
+                    MySqlCommand cmdProducts = new MySqlCommand(queryProducts, conn);
 
-                    cmdProducts.Parameters.Add(new SqlParameter(SqlConstants.ROW_START_PARAMETER_NAME, SqlDbType.Int));
+                    cmdProducts.Parameters.Add(new MySqlParameter(SqlConstants.ROW_START_PARAMETER_NAME, MySqlDbType.Int16));
                     cmdProducts.Parameters[SqlConstants.ROW_START_PARAMETER_NAME].Value = dataQuery.StartRow;
 
-                    cmdProducts.Parameters.Add(new SqlParameter(SqlConstants.ROW_END_PARAMETER_NAME, SqlDbType.Int));
+                    cmdProducts.Parameters.Add(new MySqlParameter(SqlConstants.ROW_END_PARAMETER_NAME, MySqlDbType.Int16));
                     cmdProducts.Parameters[SqlConstants.ROW_END_PARAMETER_NAME].Value = dataQuery.EndRow;
 
-                    cmdProducts.Parameters.AddRange(dataQuery.GetFilterParameters());
+                    cmdProducts.Parameters.AddRange(GetFilterParameters(dataQuery.Filters));
 
                     List<Product> productList = new List<Product>();
 
 
-                    using (SqlDataReader reader = cmdProducts.ExecuteReader())
+                    using (MySqlDataReader reader = cmdProducts.ExecuteReader())
                     {
                         int idOrdinal = reader.GetOrdinal("Id");
                         int descriptionOrdinal = reader.GetOrdinal("Description");
@@ -116,13 +116,44 @@ namespace ProductSearcher.DataAccess
 
             return dataQuery;
         }
+
         public ProductDataQuery GetProducts()
         {
-            return GetProducts(new ProductDataQuery());
+            throw new NotImplementedException();
+        }
+
+        public MySqlParameter[] GetFilterParameters(IList<Filter> filters)
+        {
+            List<MySqlParameter> sqlParameterList = new List<MySqlParameter>();
+
+            foreach (KeyValuePair<string, ColumnType> column in ProductColumns.Columns)
+            {
+                List<Filter> columnFilters = filters.Where(x => column.Key.Equals(x.ColumnName, StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(x.Value)).ToList();
+                int parameterIndex = 1;
+
+                foreach (Filter filter in columnFilters)
+                {
+                    if (!string.IsNullOrEmpty(filter.Value))
+                    {
+                        switch (ProductColumns.Columns.Where(x => x.Key == filter.ColumnName).FirstOrDefault().Value)
+                        {
+                            case ColumnType.Date:
+                                sqlParameterList.Add(new MySqlParameter("@" + @filter.ColumnName + parameterIndex, MySqlDbType.Date) { Value = Convert.ToDateTime(filter.Value) });
+                                break;
+                            case ColumnType.String:
+                                sqlParameterList.Add(new MySqlParameter("@" + @filter.ColumnName + parameterIndex, MySqlDbType.VarChar) { Value = filter.Value });
+                                break;
+
+                        }
+                    }
+                    parameterIndex++;
+                }
+            }
+
+            return sqlParameterList.ToArray();
+
         }
 
 
-
-    
     }
 }

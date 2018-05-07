@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductSearch.Model
+namespace ProductSearcher.Model
 {
     public class Filter
     {

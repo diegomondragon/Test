@@ -1,9 +1,9 @@
-﻿using ProductSearch.Model;
-using ProductSearcher.Common;
+﻿using ProductSearcher.Common;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProductSearcher.Model;
 
 namespace productSearcher.WebAPI.ModelBinders
 {

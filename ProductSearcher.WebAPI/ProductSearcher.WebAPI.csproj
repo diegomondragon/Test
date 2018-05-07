@@ -21,6 +21,7 @@
     <ProjectReference Include="..\ProductSearcher.BussinesManager\ProductSearcher.BussinesManager.csproj" />
     <ProjectReference Include="..\ProductSearcher.Common\ProductSearcher.Common.csproj" />
     <ProjectReference Include="..\ProductSearcher.Model\ProductSearcher.Model.csproj" />
+    <ProjectReference Include="..\ProductSearcher.DataAcces.MySQL\ProductSearcher.DataAccess.MySQL.csproj" />
   </ItemGroup>
 
   <ItemGroup>

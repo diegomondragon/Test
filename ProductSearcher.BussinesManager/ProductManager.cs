@@ -1,6 +1,7 @@
-﻿using ProductSearch.Model;
-using ProductSearcher.DataManager;
+﻿using ProductSearcher.Model;
+using ProductSearcher.DataAcces.MySQL;
 using System.Collections.Generic;
+using ProductSearcher.BussinesManager;
 
 namespace ProductSearsher.BussinesManager
 {
@@ -10,6 +11,7 @@ namespace ProductSearsher.BussinesManager
 
         public ProductManager() : this(new ProductsDataDataAccess())
         {
+            
         }
         public ProductManager(IProductsDataDataAccess productsDataDataAccess)
         {

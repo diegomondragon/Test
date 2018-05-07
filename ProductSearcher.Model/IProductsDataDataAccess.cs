@@ -1,6 +1,5 @@
-﻿using ProductSearch.Model;
-
-namespace ProductSearcher.DataManager
+﻿
+namespace ProductSearcher.Model
 {
     public interface IProductsDataDataAccess
     {

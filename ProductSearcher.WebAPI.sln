@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProductSearcher.DataBase", "ProductSearsher.DataBase\ProductSearcher.DataBase.sqlproj", "{FE770839-D20B-46DB-A685-2971031612B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSearcher.WebAPI", "ProductSearcher.WebAPI\ProductSearcher.WebAPI.csproj", "{FE73BB82-F5FD-462B-AAD7-C9B288300186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.WebAPI", "ProductSearcher.WebAPI\ProductSearcher.WebAPI.csproj", "{FE73BB82-F5FD-462B-AAD7-C9B288300186}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSearcher.Model", "ProductSearcher.Model\ProductSearcher.Model.csproj", "{D2694D24-EC53-4EDE-86C5-A99A450648E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.Model", "ProductSearcher.Model\ProductSearcher.Model.csproj", "{D2694D24-EC53-4EDE-86C5-A99A450648E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSearcher.DataAccess", "ProductSearcher.DataAccess\ProductSearcher.DataAccess.csproj", "{6B417581-C9BF-4B40-91CC-77356C40FE80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.DataAccess", "ProductSearcher.DataAccess\ProductSearcher.DataAccess.csproj", "{6B417581-C9BF-4B40-91CC-77356C40FE80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.Common", "ProductSearcher.Common\ProductSearcher.Common.csproj", "{A258BAAF-5E0E-4D5B-A781-B1528DB5E3B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.BussinesManager", "ProductSearcher.BussinesManager\ProductSearcher.BussinesManager.csproj", "{91C28724-A114-47FA-87C7-9F6B6D506174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductSearcher.DataAccess.MySQL", "ProductSearcher.DataAcces.MySQL\ProductSearcher.DataAccess.MySQL.csproj", "{6B98EB40-BA48-4792-8CE9-5A52F05365F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{91C28724-A114-47FA-87C7-9F6B6D506174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91C28724-A114-47FA-87C7-9F6B6D506174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91C28724-A114-47FA-87C7-9F6B6D506174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B98EB40-BA48-4792-8CE9-5A52F05365F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B98EB40-BA48-4792-8CE9-5A52F05365F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B98EB40-BA48-4792-8CE9-5A52F05365F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B98EB40-BA48-4792-8CE9-5A52F05365F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductSearcher.DataAccess\ProductSearcher.DataAccess.csproj" />
+    <ProjectReference Include="..\ProductSearcher.DataAcces.MySQL\ProductSearcher.DataAccess.MySQL.csproj" />
   </ItemGroup>
-
 </Project>

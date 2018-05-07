@@ -4,21 +4,11 @@ using System.Linq;
 using System.Data.SqlClient;
 using ProductSearcher.Common;
 
-namespace ProductSearch.Model
+namespace ProductSearcher.Model
 {
     public class ProductDataQuery
     {
-        private List<KeyValuePair<string, ColumnType>> columns = new List<KeyValuePair<string, ColumnType>>() {
-                new KeyValuePair<string, ColumnType>("Description", ColumnType.String),
-                new KeyValuePair<string, ColumnType>("LastSold", ColumnType.Date),
-                new KeyValuePair<string, ColumnType>("ShelLife", ColumnType.Number),
-                new KeyValuePair<string, ColumnType>("DepartmentId", ColumnType.Number),
-                new KeyValuePair<string, ColumnType>("Price", ColumnType.Number),
-                new KeyValuePair<string, ColumnType>("UnitId", ColumnType.Number),
-                new KeyValuePair<string, ColumnType>("xFor", ColumnType.Number),
-                new KeyValuePair<string, ColumnType>("Cost", ColumnType.Number)
-
-            };
+        
 
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
@@ -34,7 +24,7 @@ namespace ProductSearch.Model
         {
             string stringFilters = string.Empty;
 
-            foreach (KeyValuePair<string, ColumnType> column in columns)
+            foreach (KeyValuePair<string, ColumnType> column in ProductColumns.Columns)
             {
                 List<Filter> columnFilters = this.Filters.Where(x => column.Key.Equals(x.ColumnName, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
@@ -121,26 +111,6 @@ namespace ProductSearch.Model
             private set { }
         }
 
-        public SqlParameter[] GetFilterParameters()
-        {
-            List<SqlParameter> sqlParameterList = new List<SqlParameter>();
 
-            foreach (KeyValuePair<string, ColumnType> column in columns)
-            {
-                List<Filter> columnFilters = this.Filters.Where(x => column.Key.Equals(x.ColumnName, StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(x.Value)).ToList();
-                int parameterIndex = 1;
-
-                foreach (Filter filter in columnFilters)
-                {
-                    if (!string.IsNullOrEmpty(filter.Value))
-                        sqlParameterList.Add(new SqlParameter("@" + @filter.ColumnName + parameterIndex, System.Data.SqlDbType.VarChar) { Value = filter.Value });
-
-                    parameterIndex++;
-                }
-            }
-
-            return sqlParameterList.ToArray();
-
-        }
     }
 }

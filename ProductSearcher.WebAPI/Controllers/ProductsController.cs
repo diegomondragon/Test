@@ -1,7 +1,8 @@
-﻿using ProductSearch.Model;
+﻿using ProductSearcher.Model;
 using productSearcher.WebAPI.ModelBinders;
 using ProductSearsher.BussinesManager;
 using Microsoft.AspNetCore.Mvc;
+using ProductSearcher.BussinesManager;
 
 namespace productSearcher.WebAPI.Controllers
 {

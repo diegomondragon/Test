@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using ProductSearcher.Common;
 
-namespace ProductSearch.Model
+namespace ProductSearcher.Model
 {
     public class Product
     {
+       
         public int Id { get; set; }
         public string Description { get; set; }
         public DateTime? LastSold { get; set; }
@@ -14,4 +17,5 @@ namespace ProductSearch.Model
         public int XFor { get; set; }
         public double Cost { get; set; }
     }
+   
 }
