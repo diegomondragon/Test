@@ -41,14 +41,14 @@ namespace ProductSearcher.DataAccess
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string filterString = dataQuery.GetFiltersAsString();
+                    string filterString = GetFiltersAsString(dataQuery.Filters);
                     string queryTotalProducts = SqlConstants.PRODUCTS_SELECT_QUERY_COUNT;
                     if (!string.IsNullOrEmpty(filterString))
                         queryTotalProducts += SqlConstants.WHERE + filterString;
 
 
                     SqlCommand cmdTotalProducts = new SqlCommand(queryTotalProducts, conn);
-                    cmdTotalProducts.Parameters.AddRange(dataQuery.GetFilterParameters());
+                    cmdTotalProducts.Parameters.AddRange(GetFilterParameters());
                     conn.Open();
 
                     Int32 count = Convert.ToInt32(cmdTotalProducts.ExecuteScalar());
@@ -72,7 +72,7 @@ namespace ProductSearcher.DataAccess
                     cmdProducts.Parameters.Add(new SqlParameter(SqlConstants.ROW_END_PARAMETER_NAME, SqlDbType.Int));
                     cmdProducts.Parameters[SqlConstants.ROW_END_PARAMETER_NAME].Value = dataQuery.EndRow;
 
-                    cmdProducts.Parameters.AddRange(dataQuery.GetFilterParameters());
+                    cmdProducts.Parameters.AddRange(GetFilterParameters());
 
                     List<Product> productList = new List<Product>();
 
@@ -116,13 +116,20 @@ namespace ProductSearcher.DataAccess
 
             return dataQuery;
         }
+
+        private Array GetFilterParameters()
+        {
+            throw new NotImplementedException();
+        }
+
+        private string GetFiltersAsString(IList<Filter> filters)
+        {
+            throw new NotImplementedException();
+        }
+
         public ProductDataQuery GetProducts()
         {
             return GetProducts(new ProductDataQuery());
-        }
-
-
-
-    
+        }    
     }
 }

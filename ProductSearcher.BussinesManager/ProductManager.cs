@@ -34,6 +34,5 @@ namespace ProductSearsher.BussinesManager
             }
             return dataQuery;
         }
-
     }
 }
