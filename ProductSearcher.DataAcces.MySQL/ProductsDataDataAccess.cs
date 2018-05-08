@@ -135,13 +135,17 @@ namespace ProductSearcher.DataAcces.MySQL
                 {
                     if (!string.IsNullOrEmpty(filter.Value))
                     {
-                        switch (ProductColumns.Columns.Where(x => x.Key == filter.ColumnName).FirstOrDefault().Value)
+                        ColumnType columnType = ProductColumns.Columns.Where(x => x.Key.ToLower() == filter.ColumnName.ToLower()).FirstOrDefault().Value;
+                        switch (columnType)
                         {
                             case ColumnType.Date:
                                 sqlParameterList.Add(new MySqlParameter("@" + @filter.ColumnName + parameterIndex, MySqlDbType.Date) { Value = Convert.ToDateTime(filter.Value) });
                                 break;
                             case ColumnType.String:
                                 sqlParameterList.Add(new MySqlParameter("@" + @filter.ColumnName + parameterIndex, MySqlDbType.VarChar) { Value = filter.Value });
+                                break;
+                            case ColumnType.Number:
+                                sqlParameterList.Add(new MySqlParameter("@" + @filter.ColumnName + parameterIndex, MySqlDbType.Float) { Value = filter.Value });
                                 break;
 
                         }

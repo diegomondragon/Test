@@ -54,7 +54,7 @@ namespace ProductSearcher.Model
                                     stringColumnFilters += string.Concat("(Product.", filter.ColumnName, " = @" + @filter.ColumnName + parameterIndex + ")");
                                     break;
                                 case FilterType.Contains:
-                                    stringColumnFilters += string.Concat("(Product.", filter.ColumnName, " Like '%' + @" + @filter.ColumnName + parameterIndex + " + '%')");
+                                    stringColumnFilters += string.Concat("(Product.", filter.ColumnName, " LIKE CONCAT('%', @" + @filter.ColumnName + parameterIndex + ", '%'))");
                                     break;
                             }
                             break;
