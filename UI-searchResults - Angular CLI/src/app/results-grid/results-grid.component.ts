@@ -55,7 +55,7 @@ export class ResultsGridComponent implements OnInit, OnChanges, AfterViewInit {
       ajax: (dataTablesParameters: any, callback) => {
         that.http
           .get<ProductDataQuery>(
-            'http://diegom-webapi.azurewebsites.net/api/products'  + getQueryString(dataTablesParameters)  + this.searchQuery,
+            'http://localhost:56112/api/products'  + getQueryString(dataTablesParameters)  + this.searchQuery,
              {}
           ).subscribe(resp => {
             that.products = resp.Result;
