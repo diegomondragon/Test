@@ -41,6 +41,9 @@ namespace ProductSearcher.DataAcces.MySQL
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
+                    dataQuery.StartRow = (dataQuery.PageNumber - 1) * dataQuery.PageSize;
+                    dataQuery.EndRow = ((dataQuery.PageNumber - 1) * dataQuery.PageSize) + dataQuery.PageSize;
+
                     string filterString = GetFiltersAsString(dataQuery.Filters);
                     string queryTotalProducts = SqlConstants.PRODUCTS_SELECT_QUERY_COUNT;
                     if (!string.IsNullOrEmpty(filterString))
@@ -69,8 +72,8 @@ namespace ProductSearcher.DataAcces.MySQL
                     cmdProducts.Parameters.Add(new MySqlParameter(SqlConstants.ROW_START_PARAMETER_NAME, MySqlDbType.Int16));
                     cmdProducts.Parameters[SqlConstants.ROW_START_PARAMETER_NAME].Value = dataQuery.StartRow;
 
-                    cmdProducts.Parameters.Add(new MySqlParameter(SqlConstants.ROW_END_PARAMETER_NAME, MySqlDbType.Int16));
-                    cmdProducts.Parameters[SqlConstants.ROW_END_PARAMETER_NAME].Value = dataQuery.EndRow;
+                    cmdProducts.Parameters.Add(new MySqlParameter(SqlConstants.PAGE_SIZE_PARAMETER_NAME, MySqlDbType.Int16));
+                    cmdProducts.Parameters[SqlConstants.PAGE_SIZE_PARAMETER_NAME].Value = dataQuery.PageSize;
 
                     cmdProducts.Parameters.AddRange(GetFilterParameters(dataQuery.Filters));
 

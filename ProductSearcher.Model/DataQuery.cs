@@ -18,21 +18,7 @@ namespace ProductSearcher.Model
             Filters = new List<Filter>();
             Result = new List<Product>();
         }
-        public int StartRow
-        {
-            get
-            {
-                return (this.PageNumber - 1) * this.PageSize;
-            }
-            private set { }
-        }
-        public int EndRow
-        {
-            get
-            {
-                return ((this.PageNumber - 1) * this.PageSize) + this.PageSize + 1;
-            }
-            private set { }
-        }
+        public int StartRow { get; set; }
+        public int EndRow { get; set; }
     }
 }
