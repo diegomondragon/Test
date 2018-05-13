@@ -1,13 +1,13 @@
 package api;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
-    @RequestMapping("/api/Product")
-    public String products(String name) {
-        return "Products";
+	@GetMapping("/api/product")
+    public DataQuery product(DataQuery dataQuery) {    	
+        return dataQuery;
     }
 }
